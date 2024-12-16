@@ -1,0 +1,2 @@
+[napari.manifest]
+napari-threshold = napari_threshold:napari.yaml

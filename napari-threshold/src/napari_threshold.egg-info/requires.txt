@@ -1,0 +1,13 @@
+numpy
+magicgui
+qtpy
+scikit-image
+torch
+
+[testing]
+tox
+pytest
+pytest-cov
+pytest-qt
+napari
+pyqt5

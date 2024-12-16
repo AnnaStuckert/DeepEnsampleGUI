@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/napari_threshold/__init__.py
+src/napari_threshold/_widget.py
+src/napari_threshold/models.py
+src/napari_threshold/napari.yaml
+src/napari_threshold.egg-info/PKG-INFO
+src/napari_threshold.egg-info/SOURCES.txt
+src/napari_threshold.egg-info/dependency_links.txt
+src/napari_threshold.egg-info/entry_points.txt
+src/napari_threshold.egg-info/requires.txt
+src/napari_threshold.egg-info/top_level.txt
+src/napari_threshold/_tests/__init__.py
+src/napari_threshold/_tests/test_widget.py

@@ -1,4 +1,4 @@
-# napari GUI of Deep Ensample U-net for Image Segmentation 
+# napari plugin of Deep Ensample U-net for Image Segmentation 
 This is the repository for developing a napari GUI for the deep ensamble U-net model presented in [Kaminski et al. (2021)](https://openreview.net/forum?id=PLSdnHPx-W6) and used in [Montañana-Rosell et al. (2023)](https://pubmed.ncbi.nlm.nih.gov/38820149/).
 
 In this repository, you will find the python translation of the R code used in [Montañana-Rosell et al. (2023)](https://pubmed.ncbi.nlm.nih.gov/38820149/) located in the *Montañana-Rosell translation* folder. You will also find the plugin in its current state.

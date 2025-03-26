@@ -5,6 +5,7 @@ pyproject.toml
 src/napari_threshold/__init__.py
 src/napari_threshold/_widget.py
 src/napari_threshold/models.py
+src/napari_threshold/models3.py
 src/napari_threshold/napari.yaml
 src/napari_threshold.egg-info/PKG-INFO
 src/napari_threshold.egg-info/SOURCES.txt

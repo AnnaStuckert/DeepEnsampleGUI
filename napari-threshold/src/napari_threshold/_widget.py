@@ -21,7 +21,8 @@ from skimage.color import rgb2gray
 from skimage.filters import threshold_li, threshold_multiotsu, threshold_otsu
 from skimage.io import imread
 
-from .models import UNet, Unet_mouse
+from .models import Unet
+from .models3 import UNet2
 
 if TYPE_CHECKING:
     import napari
@@ -53,7 +54,9 @@ def example_magic_widget(img_layer: "napari.layers.Image"):
 
 @magic_factory(
     call_button="Run",
-    filter_selected={"choices": ["otsu", "li", "multi_otsu", "U-net"]},
+    filter_selected={
+        "choices": ["otsu", "li", "multi_otsu", "U-net", "Unet_mouse"]
+    },
 )
 def threshold_f(
     selected_image: ImageData, filter_selected="U-net"
@@ -83,9 +86,9 @@ def threshold_f(
         from PIL import Image
 
         # Load the pre-trained U-net model
-        model_path = "models\\cell_segmentation_unet.pth"
+        model_path = "/Users/annastuckert/Documents/GitHub/DeepEnsampleGUI/napari-threshold/src/napari_threshold/cell_segmentation_unet.pth"
         model = (
-            UNet()
+            UNet2()
         )  # Replace `UNet` with the correct model class used during training
 
         # Load the state dictionary
@@ -120,19 +123,22 @@ def threshold_f(
         mask = (
             output_resized.squeeze().numpy() > 0.5
         )  # Apply a threshold to the U-net output
-    elif filter_selected == "U-net_mouse":
+    elif filter_selected == "Unet_mouse":
         import torch
         import torchvision.transforms as T
         from PIL import Image
 
         # Load the pre-trained U-net model
-        model_path = "models\\mouse_model.pth"
+        model_path = "/Users/annastuckert/Documents/GitHub/DeepEnsampleGUI/napari-threshold/src/napari_threshold/mouse_model.pth"
         model = (
-            Unet_mouse()
+            Unet()
         )  # Replace `UNet` with the correct model class used during training
 
         # Load the state dictionary
-        state_dict = torch.load(model_path, weights_only=True)
+        # state_dict = torch.load(model_path, weights_only=False)
+        state_dict = torch.load(
+            model_path, map_location=torch.device("cpu"), weights_only=False
+        )
         model.load_state_dict(state_dict)
         model.eval()  # Set the model to evaluation mode
 

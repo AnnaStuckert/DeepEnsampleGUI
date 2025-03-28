@@ -401,7 +401,7 @@ for epoch in range(num_epochs):
             plt.subplot(batch_size, 3, 3 * i + 3)
             plt.imshow(fmap[i])
 
-        plt.tight_layout()
+        plt.tight_layoutx()
 
         plt.savefig("logs/epoch_%03d.jpg" % epoch)
 
